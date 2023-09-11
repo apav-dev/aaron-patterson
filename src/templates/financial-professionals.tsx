@@ -20,14 +20,14 @@ export const config: TemplateConfig = {
     fields: [
       "name",
       "c_jobTitle",
-      "address",
+      "address?",
       "mainPhone",
-      "headshot",
+      "emails?",
+      "headshot?",
       "description",
       "slug",
-      "emails",
     ],
-    filter: { savedFilterIds: ["1315957659"] },
+    filter: { entityIds: ["FP-0132"] },
   },
 };
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
@@ -62,6 +62,7 @@ export default function Blog({ document }: TemplateProps) {
         phone={`${document.mainPhone}`}
         email={`${document.emails?.[0]}`}
         headshotUrl={`${document.headshot?.url}`}
+        heroTheme="red"
       />
       <FinProNav />
       <FinProAbout
