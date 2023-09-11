@@ -20,10 +20,10 @@ export const config: TemplateConfig = {
     fields: [
       "name",
       "c_jobTitle",
-      "address?",
+      "address",
       "mainPhone",
-      "emails?",
-      "headshot?",
+      "emails",
+      "headshot",
       "description",
       "slug",
     ],
