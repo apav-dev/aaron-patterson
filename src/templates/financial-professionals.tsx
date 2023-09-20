@@ -61,7 +61,7 @@ export default function Blog({ document }: TemplateProps) {
         phone={`${document.mainPhone}`}
         email={`${document.emails[0]}`}
         headshotUrl={`${document.headshot.url}`}
-        heroTheme="red"
+        heroTheme="blue"
       />
       <FinProNav />
       <FinProAbout
