@@ -19,12 +19,12 @@ export const config: TemplateConfig = {
     localization: { locales: ["en"], primary: false },
     fields: [
       "name",
+      "description",
       "c_jobTitle",
       "address",
       "mainPhone",
       "emails",
       "headshot",
-      "description",
       "slug",
     ],
     filter: { entityIds: ["FP-0132"] },
@@ -48,6 +48,11 @@ export default function Blog({ document }: TemplateProps) {
   return (
     <MainLayout backgroundColor="#FFFFFF">
       <FinProHeader />
+      <FinProNav />
+      <FinProAbout
+        name={`${document.name}`}
+        description={`${document.description}`}
+      />
       <FinProHero
         name={`${document.name}`}
         title={`${document.c_jobTitle}`}
@@ -62,11 +67,6 @@ export default function Blog({ document }: TemplateProps) {
         email={`${document.emails[0]}`}
         headshotUrl={`${document.headshot.url}`}
         heroTheme="green"
-      />
-      <FinProNav />
-      <FinProAbout
-        name={`${document.name}`}
-        description={`${document.description}`}
       />
     </MainLayout>
   );
