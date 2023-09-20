@@ -20,11 +20,10 @@ export const config: TemplateConfig = {
     fields: [
       "name",
       "c_jobTitle",
-      "address?",
       "address",
       "mainPhone",
-      "emails?",
-      "headshot?",
+      "emails",
+      "headshot",
       "description",
       "slug",
     ],
@@ -53,16 +52,16 @@ export default function Blog({ document }: TemplateProps) {
         name={`${document.name}`}
         title={`${document.c_jobTitle}`}
         address={{
-          line1: `${document.address?.line1}`,
+          line1: `${document.address.line1}`,
           line2: ``,
           city: `${document.address.city}`,
           region: `${document.address.region}`,
           postalCode: `${document.address.postalCode}`,
         }}
         phone={`${document.mainPhone}`}
-        email={`${document.emails?.[0]}`}
-        headshotUrl={`${document.headshot?.url}`}
-        heroTheme="blue"
+        email={`${document.emails[0]}`}
+        headshotUrl={`${document.headshot.url}`}
+        heroTheme="red"
       />
       <FinProNav />
       <FinProAbout
