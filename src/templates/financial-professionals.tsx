@@ -20,10 +20,10 @@ export const config: TemplateConfig = {
     fields: [
       "name",
       "c_jobTitle",
-      "address",
+      "address?",
       "mainPhone",
-      "emails",
-      "headshot",
+      "emails?",
+      "headshot?",
       "description",
       "slug",
     ],
@@ -62,7 +62,7 @@ export default function Blog({ document }: TemplateProps) {
         phone={`${document.mainPhone}`}
         email={`${document.emails?.[0]}`}
         headshotUrl={`${document.headshot?.url}`}
-        heroTheme="red"
+        heroTheme="green"
       />
       <FinProNav />
       <FinProAbout
