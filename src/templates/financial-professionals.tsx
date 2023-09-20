@@ -21,6 +21,7 @@ export const config: TemplateConfig = {
       "name",
       "c_jobTitle",
       "address?",
+      "address",
       "mainPhone",
       "emails?",
       "headshot?",
@@ -45,7 +46,6 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = (
 };
 
 export default function Blog({ document }: TemplateProps) {
-  console.log(document);
   return (
     <MainLayout backgroundColor="#FFFFFF">
       <FinProHeader />
@@ -55,14 +55,14 @@ export default function Blog({ document }: TemplateProps) {
         address={{
           line1: `${document.address?.line1}`,
           line2: ``,
-          city: `${document.address?.city}`,
-          region: `${document.address?.region}`,
-          postalCode: `${document.address?.postalCode}`,
+          city: `${document.address.city}`,
+          region: `${document.address.region}`,
+          postalCode: `${document.address.postalCode}`,
         }}
         phone={`${document.mainPhone}`}
         email={`${document.emails?.[0]}`}
         headshotUrl={`${document.headshot?.url}`}
-        heroTheme="green"
+        heroTheme="blue"
       />
       <FinProNav />
       <FinProAbout
